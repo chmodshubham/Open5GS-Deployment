@@ -6,12 +6,12 @@
 ## Steps to deploy Open5gs and watch packets flow in wireshark
 
 <img src="https://user-images.githubusercontent.com/97805339/162958665-e6d299a8-6811-4540-baab-96a283e3b7d7.png" 
-      width="800" height="500">
+      width="500" height="300">
 
 * Create 2 VMs for Open5gs and UERANSIM like this.
 
 <img src="https://user-images.githubusercontent.com/97805339/162959165-9fed45ca-15c4-4105-8695-8930ff521f01.png" 
-      width="800" height="500">
+      width="500" height="300">
 
 * Check the IP of each VM and note it down.
   ```bash
@@ -20,7 +20,7 @@
   ```
   
   <img src="https://user-images.githubusercontent.com/97805339/162960015-85ea7511-31fb-4ceb-9254-7519ffa09d64.png" 
-      width="800" height="500">
+      width="500" height="300">
 
 *  Open the local terminal and connect each VM to the different terminals.
 
@@ -30,7 +30,7 @@ ssh VM_login_name@VM_ip
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162961173-5edde2f2-7484-4673-8be9-7a9521b8df27.png" 
-      width="800" height="500">
+      width="500" height="300">
 
 * Make the IP address of each VM, static, to make it easier for customers to find you via DNS.
 
@@ -42,7 +42,7 @@ sudo vi 00-installer-config.yaml
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162963861-f30481b9-8f53-4653-91e0-c772aa3a6900.png"  
-     width="800" height="500">
+     width="500" height="300">
 
 
 *Vim keys to use:* <br>
@@ -70,7 +70,7 @@ network:
  ```
  
 <img src="https://user-images.githubusercontent.com/97805339/162965243-22a985a9-9e6e-4f96-848f-da7a4c11ca91.png"  
-     width="800" height="500">
+    width="500" height="300">
      
 ```bash
      sudo netplan apply
@@ -104,7 +104,7 @@ sudo vi /etc/open5gs/amf.yaml
 * Change the ngap address with your Open5gs IP and then save and exit.
 
 <img src="https://user-images.githubusercontent.com/97805339/162971589-64ad84d6-4595-4e90-a7de-8caf99aef1c0.png"
-width="800" height="500">
+width="500" height="300">
 
 ```bash
 sudo systemctl restart open5gs-amfd
@@ -120,7 +120,7 @@ sudo vi /etc/open5gs/upf.yaml
 * Change the gtpu address with your Open5gs IP address and save it.
 
 <img src="https://user-images.githubusercontent.com/97805339/162972771-29743dfc-6033-4dfc-93d1-df342d9380dd.png"
-width="800" height="500">
+width="500" height="300">
 
 ```bash
 sudo systemctl restart open5gs-upfd
@@ -150,7 +150,7 @@ ip a
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162974310-18ade2e5-8984-40ea-824e-390f444dc1a7.png"
-width="800" height="500">
+width="500" height="300">
 
 ### Access Open5gs Dashboard
 
@@ -183,7 +183,7 @@ username - admin <br>
 password - 1423
 
 <img src="https://user-images.githubusercontent.com/97805339/162983240-0fa15fa5-a94e-464e-81cc-4eddfb0c780a.png"
-width="800" height="500">
+width="500" height="300">
 
 * Add new subscriber from dashboard : <br>
 IMSI: 901700000000001, <br>
@@ -194,7 +194,7 @@ Operator Key: E8ED289DEBA952E4283B54E88E6183CA
 * Or only type IMSI Number, rest will filled automatically.
 
 <img src="https://user-images.githubusercontent.com/97805339/162982418-c60a32b5-06b0-4b7d-bf09-0cd9059e2206.png"
-width="800" height="500">
+width="500" height="300">
 
 * **On a new terminal, logged in to another VM for UERANSIM deployment.**
 
@@ -227,7 +227,7 @@ sudo vi UERANSIM/config/open5gs-gnb.yaml
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162977612-6223f7ef-fbc7-4e02-a50e-e91b2eef8084.png"
-     width="800" height="500">
+    width="500" height="300">
      
 ```bash
 cd UERANSIM/
@@ -245,7 +245,7 @@ sudo vi UERANSIM/config/open5gs-ue.yaml
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162978851-a7314c6f-b37d-4ce4-b7e6-a2730b2af08c.png"
-     width="800" height="500">
+     width="500" height="300">
 
 ```bash
 cd UERANSIM/
@@ -283,7 +283,4 @@ scp s2@192.168.122.11:/home/s2/UERANSIM/gNB1.pcap
 * You can see the flow of data packets and protocols used.
 
 <img src="https://user-images.githubusercontent.com/97805339/162981494-ea6fb369-a587-4eda-ae1e-aaeb7f2ca562.png"
-     width="800" height="500">
-
-
-
+    width="500" height="300">
