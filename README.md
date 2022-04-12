@@ -3,8 +3,6 @@
 2. <a href="https://github.com/nitinrajput1997/open5gs">Reference1</a>
 3. <a href="https://github.com/RohitArora7/IP-Static-and-Dynamic">Reference2</a>
 
-## Steps to deploy Open5gs and watch packets flow in wireshark
-
 <img src="https://user-images.githubusercontent.com/97805339/162958665-e6d299a8-6811-4540-baab-96a283e3b7d7.png" 
       width="500" height="300">
 
@@ -73,7 +71,7 @@ network:
     width="500" height="300">
      
 ```bash
-     sudo netplan apply
+sudo netplan apply
 ```
 
 * The command is running in this terminal. So, open another terminal and login same VM again. And close the running terminal.
@@ -267,7 +265,7 @@ sudo tcpdump host ip -i any -w file.pcap
 * Open a new local terminal and run this command:
 
 ```bash
- scp UERANSIM_VMlogin_name@ip:location_to_store_the_packets
+scp UERANSIM_VMlogin_name@ip:location_to_store_the_packets
 ```
 
 * For example, in my case, it is:
