@@ -24,7 +24,7 @@
 
 ```bash
 ## connect to the VM
-ssh VM_login_name@VM_ip
+ssh <VM_login_name>@<VM_ip>
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162961173-5edde2f2-7484-4673-8be9-7a9521b8df27.png" 
@@ -36,7 +36,7 @@ ssh VM_login_name@VM_ip
 ## to change ip
 cd /etc/netplan/
 ls
-sudo vi 00-installer-config.yaml
+sudo vim 00-installer-config.yaml
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162963861-f30481b9-8f53-4653-91e0-c772aa3a6900.png"  
@@ -96,7 +96,7 @@ sudo apt install open5gs
 
 ```bash
 ## to edit amf config 
-sudo vi /etc/open5gs/amf.yaml 
+sudo vim /etc/open5gs/amf.yaml 
 ```
 
 * Change the ngap address with your Open5gs IP and then save and exit.
@@ -112,7 +112,7 @@ sudo systemctl restart open5gs-amfd
 
 ```bash
 ## to edit upf config 
-sudo vi /etc/open5gs/upf.yaml 
+sudo vim /etc/open5gs/upf.yaml 
 ```
 
 * Change the gtpu address with your Open5gs IP address and save it.
@@ -200,7 +200,7 @@ width="500" height="300">
 
 ```bash
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 sudo apt install iproute2
 sudo snap install cmake --classic
 sudo apt install gcc
@@ -221,7 +221,7 @@ make
 * Update the "linkIp", "ngapIp", "gtpIp" field with UERANSIM IP and change the amfConfigs address field with Open5gs IP and save it.
 
 ```bash
-sudo vi config/open5gs-gnb.yaml 
+sudo vim config/open5gs-gnb.yaml 
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162977612-6223f7ef-fbc7-4e02-a50e-e91b2eef8084.png"
@@ -239,7 +239,7 @@ sudo ./build/nr-gnb -c config/open5gs-gnb.yaml
 * Update the "gnbSearchList" with the IP address of the UERANSIM.
 
 ```bash
-sudo vi UERANSIM/config/open5gs-ue.yaml
+sudo vim UERANSIM/config/open5gs-ue.yaml
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162978851-a7314c6f-b37d-4ce4-b7e6-a2730b2af08c.png"
@@ -271,7 +271,7 @@ scp UERANSIM_VMlogin_name@ip:<location_of_the_file> <location_to_store_the_packe
 * For example, in my case, it is:
 
 ```bash
-scp s2@192.168.122.11:/home/s2/UERANSIM/gNB1.pcap /home/aditya/gNB1.pcap
+scp s2@192.168.5.182:/home/UERANSIM/file.pcap /home/aditya/file.pcap
 ```
 
 * After sometime, stop the terminal running “sudo tcpdump host 192.168.122.11 -i any -w gNB1.pcap” command by pressing “shift+c” button.
