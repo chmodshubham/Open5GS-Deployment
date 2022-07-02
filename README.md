@@ -221,7 +221,7 @@ make
 * Update the "linkIp", "ngapIp", "gtpIp" field with UERANSIM IP and change the amfConfigs address field with Open5gs IP and save it.
 
 ```bash
-sudo vi UERANSIM/config/open5gs-gnb.yaml 
+sudo vi config/open5gs-gnb.yaml 
 ```
 
 <img src="https://user-images.githubusercontent.com/97805339/162977612-6223f7ef-fbc7-4e02-a50e-e91b2eef8084.png"
@@ -265,13 +265,13 @@ sudo tcpdump host ip -i any -w file.pcap
 * Open a new local terminal and run this command:
 
 ```bash
-scp UERANSIM_VMlogin_name@ip:location_to_store_the_packets
+scp UERANSIM_VMlogin_name@ip:<location_of_the_file> <location_to_store_the_packets_in_the_local_device>
 ```
 
 * For example, in my case, it is:
 
 ```bash
-scp s2@192.168.122.11:/home/s2/UERANSIM/gNB1.pcap
+scp s2@192.168.122.11:/home/s2/UERANSIM/gNB1.pcap /home/aditya/gNB1.pcap
 ```
 
 * After sometime, stop the terminal running “sudo tcpdump host 192.168.122.11 -i any -w gNB1.pcap” command by pressing “shift+c” button.
