@@ -259,19 +259,19 @@ sudo ./build/nr-ue -c config/open5gs-ue.yaml
 ```bash
 ## change ip field with your UERANSIM IP.
 ## file.pcap is the name of the file, you want to store packets. You can change the name of the file.
-sudo tcpdump host ip -i any -w file.pcap
+sudo tcpdump host <ip> -i any -w file.pcap
 ```
 
 * Open a new local terminal and run this command:
 
 ```bash
-scp UERANSIM_VMlogin_name@ip:<location_of_the_file> <location_to_store_the_packets_in_the_local_device>
+scp <UERANSIM-VMlogin-name>@<ip>:<location_of_the_file> <location_to_store_the_packets_in_the_local_device>
 ```
 
 * For example, in my case, it is:
 
 ```bash
-scp s2@192.168.5.182:/home/UERANSIM/file.pcap /home/aditya/file.pcap
+scp s2@192.168.5.182:/home/UERANSIM/file.pcap /home/shubham/file.pcap
 ```
 
 * After sometime, stop the terminal running “sudo tcpdump host 192.168.122.11 -i any -w gNB1.pcap” command by pressing “shift+c” button.
