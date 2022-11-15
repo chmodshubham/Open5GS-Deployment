@@ -218,7 +218,7 @@ make
 
 ### Setup gNB
 
-* Update the "linkIp", "ngapIp", "gtpIp" field with UERANSIM IP and change the amfConfigs address field with Open5gs IP and save it.
+* Update the `linkIp`, `ngapIp`, `gtpIp` field with UERANSIM IP and change the `amfConfigs address` field with Open5gs IP and save it.
 
 ```bash
 sudo vim config/open5gs-gnb.yaml 
@@ -236,7 +236,7 @@ sudo ./build/nr-gnb -c config/open5gs-gnb.yaml
 
 * **Open a new terminal, logged in to same VM as used in gNB setup.**
 
-* Update the "gnbSearchList" with the IP address of the UERANSIM.
+* Update the `gnbSearchList` with the IP address of the UERANSIM.
 
 ```bash
 sudo vim UERANSIM/config/open5gs-ue.yaml
